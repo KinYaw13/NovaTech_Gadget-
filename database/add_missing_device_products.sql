@@ -1,0 +1,60 @@
+USE novatech_gadgets;
+
+DELETE FROM cart WHERE product_id IN (
+  SELECT product_id FROM products WHERE product_name IN (
+    'Apple AirPods Pro 3','Apple AirPods 4 with ANC','Samsung Galaxy Buds3 Pro','Xiaomi Buds 5 Pro','Beats Studio Buds +',
+    'Razer BlackWidow V4 Pro 75%','Razer Huntsman V3 Pro TKL','Logitech MX Mechanical','Keychron Q1 HE','ASUS ROG Azoth',
+    'Apple MacBook Air 13 M4','Apple MacBook Air 15 M4','Apple MacBook Pro 14 M4','Apple MacBook Pro 16 M4 Pro','ASUS Zenbook 14 OLED',
+    'Logitech MX Master 3S','Logitech MX Anywhere 3S','Razer Basilisk V3 Pro','Razer Viper V3 Pro','Apple Magic Mouse USB-C',
+    'Apple Watch Series 11','Apple Watch SE 3','Apple Watch Ultra 3','Samsung Galaxy Watch8','Samsung Galaxy Watch Ultra','Xiaomi Watch S4','Fitbit Charge 6',
+    'Apple iPad Air M3','Apple iPad Pro M4','Samsung Galaxy Tab S10 Ultra','Xiaomi Pad 7 Pro','Huawei MatePad Pro 13.2'
+  )
+);
+
+DELETE FROM products WHERE product_name IN (
+  'Apple AirPods Pro 3','Apple AirPods 4 with ANC','Samsung Galaxy Buds3 Pro','Xiaomi Buds 5 Pro','Beats Studio Buds +',
+  'Razer BlackWidow V4 Pro 75%','Razer Huntsman V3 Pro TKL','Logitech MX Mechanical','Keychron Q1 HE','ASUS ROG Azoth',
+  'Apple MacBook Air 13 M4','Apple MacBook Air 15 M4','Apple MacBook Pro 14 M4','Apple MacBook Pro 16 M4 Pro','ASUS Zenbook 14 OLED',
+  'Logitech MX Master 3S','Logitech MX Anywhere 3S','Razer Basilisk V3 Pro','Razer Viper V3 Pro','Apple Magic Mouse USB-C',
+  'Apple Watch Series 11','Apple Watch SE 3','Apple Watch Ultra 3','Samsung Galaxy Watch8','Samsung Galaxy Watch Ultra','Xiaomi Watch S4','Fitbit Charge 6',
+  'Apple iPad Air M3','Apple iPad Pro M4','Samsung Galaxy Tab S10 Ultra','Xiaomi Pad 7 Pro','Huawei MatePad Pro 13.2'
+);
+
+INSERT INTO products (category_id, product_name, brand, description, price, stock_quantity, image, rating, status) VALUES
+((SELECT category_id FROM categories WHERE category_name='Earbuds'), 'Apple AirPods Pro 3', 'Apple', 'Config: USB-C MagSafe Charging Case. Colors: White.', 1099.00, 22, 'https://www.apple.com/v/airpods-pro/r/images/meta/og__c0ceegchesom_overview.png?202604261906', 4.9, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Earbuds'), 'Apple AirPods 4 with ANC', 'Apple', 'Config: USB-C Charging Case. Colors: White.', 829.00, 24, 'https://www.apple.com/v/airpods-4/g/images/meta/airpods-4__gnjh1t3yjxm6_og.png?202604230007', 4.7, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Earbuds'), 'Samsung Galaxy Buds3 Pro', 'Samsung', 'Config: Standard. Colors: Silver, White.', 999.00, 18, 'https://i5.walmartimages.com/asr/a0a7118b-71be-4fa3-98c4-ef8f98f32dbd.b5530453763509be966b3012c81d1fcd.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', 4.7, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Earbuds'), 'Xiaomi Buds 5 Pro', 'Xiaomi', 'Config: Standard. Colors: Black, White, Gold.', 699.00, 20, 'https://i02.appmifile.com/455_item_my/25/02/2025/2e013f5e02abbb4487af8fc7aa5868b3.png', 4.6, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Earbuds'), 'Beats Studio Buds +', 'Beats', 'Config: Standard. Colors: Transparent, Black, Ivory.', 699.00, 16, 'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MQLK3?wid=1200&hei=630&fmt=jpeg&qlt=95', 4.6, 'active'),
+
+((SELECT category_id FROM categories WHERE category_name='Keyboards'), 'Razer BlackWidow V4 Pro 75%', 'Razer', 'Config: Orange tactile switches / Green clicky switches. Color: Black.', 1399.00, 10, 'https://assets2.razerzone.com/images/pnx.assets/3b09f11f56c96cab9def3c2825f00567/razer-blackwidow-v4-pro-75-og-image-1200x630-v2.webp', 4.8, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Keyboards'), 'Razer Huntsman V3 Pro TKL', 'Razer', 'Config: Analog optical switches. Color: Black.', 799.00, 12, 'https://assets2.razerzone.com/images/pnx.assets/ce8efb94452a0b8f9d2e8dcebc9bab5c/razer-huntsman-v3-pro-tkl-ogimage-1200x630-v2.webp', 4.8, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Keyboards'), 'Logitech MX Mechanical', 'Logitech', 'Config: Tactile Quiet / Linear / Clicky. Colors: Graphite, Pale Grey.', 699.00, 14, 'https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/migration-assets-for-delorean-2025/gallery/mx-mechanical-top-view-graphite-us.png', 4.7, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Keyboards'), 'Keychron Q1 HE', 'Keychron', 'Config: Magnetic switches. Colors: Black, White.', 999.00, 9, 'https://www.keychron.com/cdn/shop/files/Q1-HE-Iconic-Features.jpg?crop=center&height=1200&v=1754623218&width=1200', 4.7, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Keyboards'), 'ASUS ROG Azoth', 'ASUS', 'Config: ROG NX switches. Colors: Black, White.', 1199.00, 9, 'https://dlcdnwebimgs.asus.com/gain/145896AC-B462-4466-A1FE-935F085741F3', 4.8, 'active'),
+
+((SELECT category_id FROM categories WHERE category_name='Laptops'), 'Apple MacBook Air 13 M4', 'Apple', 'Config: 16GB+256GB / 16GB+512GB / 24GB+512GB. Colors: Sky Blue, Silver, Starlight, Midnight.', 4499.00, 11, 'https://www.apple.com/v/macbook-air/z/images/meta/macbook_air_mx__ez5y0k5yy7au_og.png?202605071756', 4.8, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Laptops'), 'Apple MacBook Air 15 M4', 'Apple', 'Config: 16GB+256GB / 16GB+512GB / 24GB+512GB. Colors: Sky Blue, Silver, Starlight, Midnight.', 5499.00, 10, 'https://www.apple.com/v/macbook-air/z/images/meta/macbook_air_mx__ez5y0k5yy7au_og.png?202605071756', 4.8, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Laptops'), 'Apple MacBook Pro 14 M4', 'Apple', 'Config: 16GB+512GB / 24GB+1TB. Colors: Space Black, Silver.', 6999.00, 8, 'https://www.apple.com/v/macbook-pro/ax/images/meta/macbook-pro__difvbgz1plsi_og.png?202605071756', 4.9, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Laptops'), 'Apple MacBook Pro 16 M4 Pro', 'Apple', 'Config: 24GB+512GB / 48GB+1TB. Colors: Space Black, Silver.', 10499.00, 7, 'https://www.apple.com/v/macbook-pro/ax/images/meta/macbook-pro__difvbgz1plsi_og.png?202605071756', 4.9, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Laptops'), 'ASUS Zenbook 14 OLED', 'ASUS', 'Config: 16GB+1TB / 32GB+1TB. Colors: Ponder Blue, Foggy Silver.', 4299.00, 10, 'https://dlcdnwebimgs.asus.com/gain/282fa6b1-5d9e-4950-ab46-1da2defbe6a3/', 4.7, 'active'),
+
+((SELECT category_id FROM categories WHERE category_name='Mice'), 'Logitech MX Master 3S', 'Logitech', 'Config: Standard. Colors: Graphite, Pale Grey.', 449.00, 28, 'https://resource.logitech.com/w_800,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-mouse-top-view-graphite.png', 4.8, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Mice'), 'Logitech MX Anywhere 3S', 'Logitech', 'Config: Standard. Colors: Graphite, Pale Grey, Rose.', 399.00, 24, 'https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-anywhere-3s/product-gallery/graphite/mx-anywhere-3s-mouse-top-view-graphite.png', 4.7, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Mice'), 'Razer Basilisk V3 Pro', 'Razer', 'Config: Standard. Colors: Black, White.', 699.00, 15, 'https://assets2.razerzone.com/images/og-image/razer-basilisk-v3-pro-og-image.jpg', 4.8, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Mice'), 'Razer Viper V3 Pro', 'Razer', 'Config: Standard. Colors: Black, White.', 799.00, 14, 'https://assets2.razerzone.com/images/pnx.assets/24970f67be4ba9644e28720377d91cfb/razer-viper-v3-pro-1200x630.webp', 4.8, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Mice'), 'Apple Magic Mouse USB-C', 'Apple', 'Config: Standard. Colors: White, Black.', 399.00, 18, 'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXK53?wid=1200&hei=630&fmt=jpeg&qlt=95', 4.5, 'active'),
+
+((SELECT category_id FROM categories WHERE category_name='Smartwatches'), 'Apple Watch Series 11', 'Apple', 'Config: 42mm GPS / 46mm GPS / 46mm GPS + Cellular. Colors: Rose Gold, Silver, Jet Black.', 1799.00, 18, 'https://www.apple.com/my/apple-watch-series-11/images/meta/apple-watch-series-11__cim89z1i9spe_og.png?202605220009', 4.8, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Smartwatches'), 'Apple Watch SE 3', 'Apple', 'Config: 40mm GPS / 44mm GPS / 44mm GPS + Cellular. Colors: Midnight, Starlight.', 1049.00, 20, 'https://www.apple.com/my/apple-watch-se-3/images/meta/apple-watch-se-3__d0wwc67lzg02_og.png?202605220009', 4.6, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Smartwatches'), 'Apple Watch Ultra 3', 'Apple', 'Config: 49mm GPS + Cellular. Colors: Natural Titanium, Black Titanium.', 3699.00, 10, 'https://www.apple.com/my/apple-watch-ultra-3/images/meta/apple-watch-ultra-3__y7lxayrwmlem_og.png?202605220009', 4.9, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Smartwatches'), 'Samsung Galaxy Watch8', 'Samsung', 'Config: 40mm Bluetooth / 44mm Bluetooth / 44mm LTE. Colors: Graphite, Silver.', 1299.00, 16, 'https://image-us.samsung.com/us/watches/galaxy-watch8/images/kv/11_Watch8-Graphite-44mm-Thumbnail-800x600.jpg', 4.7, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Smartwatches'), 'Samsung Galaxy Watch Ultra', 'Samsung', 'Config: 47mm LTE. Colors: Titanium Gray, Titanium Silver, Titanium White.', 2799.00, 12, 'https://images.samsung.com/is/image/samsung/p6pim/us/f2507/gallery/us-galaxy-watch-ultra-2025-l705-sm-l705uza1xaa-547907800?$PD_GALLERY_PNG$', 4.8, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Smartwatches'), 'Xiaomi Watch S4', 'Xiaomi', 'Config: Standard / Leather Strap Edition. Colors: Black, Silver.', 699.00, 22, 'https://i02.appmifile.com/15_item_my/25/02/2025/c2e7d63c48093702b15d65fcfe324af2.png', 4.6, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Smartwatches'), 'Fitbit Charge 6', 'Fitbit', 'Config: Standard. Colors: Black, Champagne Gold, Silver.', 799.00, 18, 'https://lh3.googleusercontent.com/4fHe7o06nMhfBJhr2NPnn49GnXZV4m60iqWNfmNl5H5MjD1nuMhEGTz1hNR_Du9rlsnA5HyEF5NKcfNeE22YZAghCtEZl0BX_Q=rj-sc0xffffffff', 4.5, 'active'),
+
+((SELECT category_id FROM categories WHERE category_name='Tablets'), 'Apple iPad Air M3', 'Apple', 'Config: 11-inch 128GB / 11-inch 256GB / 13-inch 128GB / 13-inch 256GB. Colors: Space Grey, Blue, Purple, Starlight.', 2799.00, 14, 'https://www.apple.com/v/ipad-air/ah/images/meta/ipad-air_overview__bc2fd15uec0y_og.png?202606081814', 4.8, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Tablets'), 'Apple iPad Pro M4', 'Apple', 'Config: 11-inch 256GB / 13-inch 256GB / 13-inch 512GB. Colors: Silver, Space Black.', 4499.00, 12, 'https://www.apple.com/v/ipad-pro/aw/images/meta/ipad-pro_overview__bu4cql27diaa_og.png?202605071756', 4.9, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Tablets'), 'Samsung Galaxy Tab S10 Ultra', 'Samsung', 'Config: 12GB+256GB / 12GB+512GB / 16GB+1TB. Colors: Moonstone Grey, Platinum Silver.', 5699.00, 10, 'https://images.samsung.com/is/image/samsung/assets/hk_en/tablets/galaxy-tab-s10/S10_Size_KV_PC_1600x864.jpg?imbypass=true', 4.8, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Tablets'), 'Xiaomi Pad 7 Pro', 'Xiaomi', 'Config: 8GB+256GB / 12GB+512GB. Colors: Blue, Grey, Green.', 1899.00, 18, 'https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-pad-7-pro/pc/5484effe86e2b64e1bf9d0235e7bd126.jpg', 4.6, 'active'),
+((SELECT category_id FROM categories WHERE category_name='Tablets'), 'Huawei MatePad Pro 13.2', 'Huawei', 'Config: 12GB+256GB / 12GB+512GB. Colors: Black, White, Green.', 3999.00, 12, 'https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/pdp/tablets/matepad-pro-13-2-v1/list/list-black.png', 4.6, 'active');

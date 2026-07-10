@@ -1,0 +1,33 @@
+USE novatech_gadgets;
+
+ALTER TABLE cart ADD COLUMN IF NOT EXISTS selected_color VARCHAR(80) NULL;
+ALTER TABLE cart ADD COLUMN IF NOT EXISTS selected_spec VARCHAR(80) NULL;
+ALTER TABLE cart ADD COLUMN IF NOT EXISTS unit_price DECIMAL(10,2) NULL;
+ALTER TABLE order_items ADD COLUMN IF NOT EXISTS selected_options VARCHAR(255) NULL;
+
+UPDATE products SET price = 5999.00 WHERE product_name = 'Apple iPhone 17 Pro Max';
+UPDATE products SET price = 5499.00 WHERE product_name = 'Apple iPhone 17 Pro';
+UPDATE products SET price = 4999.00 WHERE product_name = 'Apple iPhone Air';
+UPDATE products SET price = 3999.00 WHERE product_name = 'Apple iPhone 17';
+UPDATE products SET price = 3499.00 WHERE product_name = 'Apple iPhone 16';
+UPDATE products SET price = 4999.00 WHERE product_name = 'Apple iPhone 15 Pro Max';
+UPDATE products SET price = 5999.00 WHERE product_name = 'Samsung Galaxy S25 Ultra';
+UPDATE products SET price = 4699.00 WHERE product_name = 'Samsung Galaxy S24 Ultra';
+UPDATE products SET price = 7799.00 WHERE product_name = 'Samsung Galaxy Z Fold7';
+UPDATE products SET price = 4999.00 WHERE product_name = 'Samsung Galaxy Z Flip7';
+UPDATE products SET price = 4999.00 WHERE product_name = 'OPPO Find X8 Pro';
+UPDATE products SET price = 3699.00 WHERE product_name = 'OPPO Find X8';
+UPDATE products SET price = 4599.00 WHERE product_name = 'vivo X300 Pro';
+UPDATE products SET price = 4699.00 WHERE product_name = 'vivo X200 Pro';
+UPDATE products SET price = 5199.00 WHERE product_name = 'Xiaomi 15 Ultra';
+UPDATE products SET price = 4599.00 WHERE product_name = 'HONOR Magic7 Pro';
+UPDATE products SET price = 5999.00 WHERE product_name = 'Huawei Pura 80 Ultra';
+UPDATE products SET price = 249.00 WHERE product_name LIKE 'Apple Silicone Case%';
+UPDATE products SET price = 249.00 WHERE product_name LIKE 'Apple Clear Case%';
+UPDATE products SET price = 299.00 WHERE product_name LIKE 'Apple TechWoven Case%';
+UPDATE products SET price = 99.00 WHERE product_name = 'Apple 20W USB-C Power Adapter';
+UPDATE products SET price = 169.00 WHERE product_name = 'Apple 30W USB-C Power Adapter';
+UPDATE products SET price = 149.00 WHERE product_name = 'Apple 240W USB-C Charge Cable 2m';
+UPDATE products SET price = 239.00 WHERE product_name = 'Apple MagSafe Charger';
+UPDATE products SET price = 1099.00 WHERE product_name = 'Apple AirPods Pro 2 USB-C';
+UPDATE products SET price = 499.00 WHERE product_name = 'Apple AirTag 4 Pack';
